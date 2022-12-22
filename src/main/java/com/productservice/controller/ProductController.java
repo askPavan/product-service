@@ -16,7 +16,7 @@ public class ProductController {
 	RestTemplate restTemplate;
 
 	@GetMapping("/products/{productNo}")
-	public ResponseEntity<String> getProducts(@PathVariable("productNo") String productNo){
+	public ResponseEntity<String> getProducts(@PathVariable("productNo") int productNo){
 		System.out.println("Fetching products....");
 		return restTemplate.getForEntity("http://eureka-discovery-client-app/api/products/"+productNo, String.class);
 	}
